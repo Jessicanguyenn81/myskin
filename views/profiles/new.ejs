@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Create Profile</title>
+</head>
+<body>
+    <h2>About You: </h2>
+    <form action="/profiles" method="POST">
+        <label>Skin Type:
+            <select name="skinType">
+                <option value="Oily">Oily</option>
+                <option value="Dry">Dry</option>
+                <option value="Normal">Normal</option>
+                <option value="Sensitive">Sensitive</option>
+                <option value="Combination">Combination</option>
+            </select>
+        </label><br>
+        <label>Age:
+            <input type="number" name="age">
+        </label><br>
+        <label>Skin Concerns:
+            <select name="skinConcerns">
+                <option value="Acne">Acne</option>
+                <option value="Pores">Pores</option>
+                <option value="Redness">Redness</option>
+                <option value="Dark Spots">Dark Spots</option>
+                <option value="Wrinkles">Wrinkles</option>
+                <option value="Aging">Aging</option>
+            </select>
+        </label><br>
+        <input type="submit" value="Create Skin Results">
+    </form>
+</body>
+</html>
