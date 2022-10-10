@@ -5,7 +5,16 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <% if (!user){ %>
+      <nav>
+          <button><a href="/auth/google">LOGIN</a></button>
+    <%} else{ %>
+      <button><a href="/logout">Sign Out</a></button>
+    <% } %>
+      </nav>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <a href="/types/new">Find My Skin Type</a>
   </body>
 </html>
+
