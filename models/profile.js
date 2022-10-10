@@ -1,5 +1,4 @@
 const mongoose = require ('mongoose')
-
 const Schema = mongoose.Schema
 
 const typeSchema = new Schema({
@@ -8,13 +7,13 @@ const typeSchema = new Schema({
         enum: ['Oily', 'Dry', 'Normal', 'Sensitive', 'Combination']
       },
     age: {
-        type: Number
+        type: Number,
+        required: true
      },
     skinConcerns: {
         type: String, 
         enum: ['Acne', 'Pores', 'Redness', 'Dark Spots', 'Wrinkles', 'Aging']
     }
-
 })
 
 const productSchema = new Schema ({
@@ -23,15 +22,13 @@ const productSchema = new Schema ({
         enum: ['Cleanser', 'Toner', 'Moisturizer', 'Serum', 'Sunscreen']
     },
     brand: {
-        type: String
+        type: String, required: true
     },
     usage: {
         type: String,
         enum:['day', 'night', 'day and night']
     },
-    completed:{
-        type: Boolean,
-        default: false
+    completed:{ type: Boolean, default: false
     }   
 })
 
@@ -44,6 +41,5 @@ const profileSchema = new Schema ({
     },
     product: productSchema
 })
-
 
 module.exports = mongoose.model('Profile', profileSchema)

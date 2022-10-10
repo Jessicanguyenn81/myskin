@@ -7,4 +7,5 @@ router.get('/new', profilesCtrl.new)
 router.post('/', profilesCtrl.create)
 router.get('/', profilesCtrl.index)
 
+
 module.exports = router;
