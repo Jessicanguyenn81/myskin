@@ -2,7 +2,8 @@ const Profile = require('../models/profile')
 
 module.exports = {
     new: newProfile,
-    create
+    create,
+    index
 }
 
 function newProfile(req, res) {
@@ -18,6 +19,15 @@ function create (req, res) {
         console.log(err)
         if(err) return res.redirect('/profiles/new')
         console.log(profile)
-        res.redirect('/profiles/new')
+        res.redirect('/profiles')
+    })
+}
+
+function index(req, res) {
+    Profile.find({}, function(err, profiles){
+        console.log(profiles)
+        res.render('profiles/index', {
+            title: 'My Skin', profiles
+        })
     })
 }
