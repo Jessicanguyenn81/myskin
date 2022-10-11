@@ -39,7 +39,7 @@ const profileSchema = new Schema ({
         ref:'User',
         required: true
     },
-    product: productSchema
+    product: [productSchema]
 })
 
 module.exports = mongoose.model('Profile', profileSchema)

@@ -10,24 +10,34 @@
 <h1><%= title %></h1>
 <body>
  <h2>My Skin Profile</h1>
-  <table>
+  <div id="profile">
     <thead>
       <tr>
-        <th>Skin Type</th>
-        <th>Age</th>
-        <th>Concerns</th>
+        <th>Skin Type:</th>
+        <th>Age:</th>
+        <th>Concerns:</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <% profiles.forEach(p => { %>
-        <tr>
-          <td><%=p.skinType.skinType %></td>
-          <td><%=p.skinType.age %></td>
-          <td><%=p.skinType.skinConcerns %></td>
-        </tr>
+        <div>
+          <p><%=p.skinType.skinType %></p>
+          <p><%=p.skinType.age %></p>
+          <p><%=p.skinType.skinConcerns %></p>
+          <p><h3>My Routine</h3>
+            <a href="/profiles/<%= p._id %>/products/new">Add New Product</a></p>
+         <% p.product.forEach( product => { %> 
+          <p><%=product.productType %></p>
+          <p><%=product.brand %></p>
+          <p><%=product.usage %></p>
+          <p><%=product.completed %></p>
+         <% }) %>
+
+        </div>
         <% }) %>
     </tbody>
-  </table>
-  <h3>My Routine</h3>
-  <a href="/products/new">Add New Product</a>
+  </div>
   <main>
+
+    
