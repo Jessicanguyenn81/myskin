@@ -22,18 +22,21 @@
     <tbody>
       <% profiles.forEach(p => { %>
         <div>
+        <div id="profile-results">
           <p><%=p.skinType.skinType %></p>
           <p><%=p.skinType.age %></p>
           <p><%=p.skinType.skinConcerns %></p>
           <p><h3>My Routine</h3>
-            <a href="/profiles/<%= p._id %>/products/new">Add New Product</a></p>
+            <a href="/profiles/<%= p._id %>/products/new">Add New Product</a></p>   
+        </div>
+        <div id="products">
          <% p.product.forEach( product => { %> 
           <p><%=product.productType %></p>
           <p><%=product.brand %></p>
           <p><%=product.usage %></p>
           <p><%=product.completed %></p>
          <% }) %>
-
+         </div>
         </div>
         <% }) %>
     </tbody>
