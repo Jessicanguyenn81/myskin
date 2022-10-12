@@ -35,7 +35,7 @@
           <p><%=product.brand %></p>
           <p><%=product.usage %></p>
           <p><%=product.completed %></p>
-          <form id="add-review-form" method="POST" action="/profiles/<%= p._id %>/reviews">
+          <form id="add-review-form" method="POST" action="/products/<%= product._id %>/reviews">
             <label>Review:</label>
             <textarea name="content"></textarea>
             <label>Rating</label>
@@ -48,6 +48,30 @@
             </select>
             <input type="submit" value="Add Review">
           </form>
+          <% if (product.reviews.length) { %>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Review</th>
+                    <th>Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% product.reviews.forEach(function(r) { %>
+                    <tr>
+                      <td><%= r.createdAt.toLocaleDateString() %></td>
+                      <td><%= r.content %></td>
+                      <td><%= r.rating %></td>
+                    </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+          <% } else { %>
+              <h5>No Reviews Yet</h5>
+          <% } %>
+
+
          <% }) %>
          </div>
         </div>

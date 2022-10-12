@@ -4,6 +4,7 @@ const router = express.Router()
 const reviewsCtrl = require('../controllers/reviews')
 
 /* Define the Route */
-router.post('/profiles/:id/reviews', reviewsCtrl.create)
+router.post('/products/:id/reviews', reviewsCtrl.create)
+router.delete('/reviews/:id', reviewsCtrl.delete)
 
-module.export = router
+module.exports = router
