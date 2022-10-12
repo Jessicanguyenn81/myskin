@@ -1,4 +1,3 @@
-const profile = require('../models/profile')
 const Profile = require('../models/profile')
 
 module.exports = {

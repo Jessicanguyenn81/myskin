@@ -16,6 +16,19 @@ const typeSchema = new Schema({
     }
 })
 
+const reviewSchema = new Schema ({
+    content: String,
+    rating:{type: String, min: 1, max: 5, default: 5},
+    user: {
+        type: Schema.Types.ObjectId,
+        ref:'User',
+        required: true
+    }
+}, {
+    timestamps: true
+})
+
+
 const productSchema = new Schema ({
     productType: {
         type: String,
@@ -29,7 +42,8 @@ const productSchema = new Schema ({
         enum:['day', 'night', 'day and night']
     },
     completed:{ type: Boolean, default: false
-    }   
+    },
+    reviews: [reviewSchema]   
 })
 
 const profileSchema = new Schema ({
@@ -40,6 +54,7 @@ const profileSchema = new Schema ({
         required: true
     },
     product: [productSchema]
+    
 })
 
 module.exports = mongoose.model('Profile', profileSchema)
