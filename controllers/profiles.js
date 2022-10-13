@@ -70,7 +70,8 @@ function editProduct(req,res) {
 function updateProduct(req,res){
     console.log('////', req.params.productid)
     console.log('-----', req.body)
-    Profile.updateOne({'product._id': req.params.productid}, {$set:req.body}, {
+    let product = req.body
+    Profile.updateOne({'product._id': req.params.productid}, {$set:{product}}, {
         new: true
     })
     res.redirect('/profiles')

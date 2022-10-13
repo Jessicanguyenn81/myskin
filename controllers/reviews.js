@@ -17,9 +17,19 @@ function create(req, res){
     })
 }
 
+
 function deleteReview(req, res){
-    Profile.findOne({'reviews._id': req.params.id, 'reviews.user': req.user._id.then(function(profile){
-        
+    Profile.findOne({
+        'products.review._id': req.params._id, 'products._id': req.user.id
+    }, function(err, profile) {
+        const product = profile.product.id(req.params.id)
+        req.body.user = req.user._id
+        console.log(product.reviews)
+        product.reviews.remove(req.params.id);
+        profile.save(function(err){
+            res.redirect('/profiles')
+        })
     })
-})
 }
+
+
