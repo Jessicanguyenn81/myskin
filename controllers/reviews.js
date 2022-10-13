@@ -19,17 +19,20 @@ function create(req, res){
 
 
 function deleteReview(req, res){
-    Profile.findOne({
-        'products.review._id': req.params._id, 'products._id': req.user.id
-    }, function(err, profile) {
-        const product = profile.product.id(req.params.id)
-        req.body.user = req.user._id
-        console.log(product.reviews)
-        product.reviews.remove(req.params.id);
-        profile.save(function(err){
-            res.redirect('/profiles')
+    Profile.findOne({'reviews._id': req.params.id, 'reviews.user': req.user._id}).then(function(profile) {
+        if (!profile) return res.redirect('/profiles')
+        let review
+        profile.product.forEach(function(prod){
+            if (prod.reviews.id(req.params.id)) review = prod.reviews.id(req.params.id)
         })
-    })
-}
-
+        if(!review.user.equals(req.user._id)) return res.redirect('/profiles')
+        review.remove(req.params.id)
+        profile.save().then(function() {
+          res.redirect('/profiles')
+        }).catch(function(err) {
+          return next(err)
+        //   res.redirect('/profiles')
+        })
+      })
+    }
 

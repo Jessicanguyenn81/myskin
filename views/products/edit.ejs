@@ -9,7 +9,7 @@
 </head>
 <body>
     <h2>Edit Product: </h2>
-    <form action="/profiles/<%= profile._id %>/<%= product._id %>/products/edit?_method=PUT" method="POST">
+    <form action="/products/<%= product._id %>/edit?_method=PUT" method="POST">
         <label>Product Type:
             <select name="productType">
                 <option value="Cleanser">Cleanser</option>

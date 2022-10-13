@@ -9,7 +9,6 @@ router.get('/new', profilesCtrl.new)
 router.post('/', profilesCtrl.create)
 router.get('/:id/products/new', profilesCtrl.newProduct )
 router.post('/:id/products', profilesCtrl.createProduct)
-router.get('/:id/products/edit', profilesCtrl.editProduct )
-router.put('/:id/:productid/products/edit', profilesCtrl.updateProduct)
+
 
 module.exports = router;
