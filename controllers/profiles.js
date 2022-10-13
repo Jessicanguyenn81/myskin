@@ -1,11 +1,12 @@
 const Profile = require('../models/profile')
-
 module.exports = {
     new: newProfile,
     create,
     index,
     newProduct,
-    createProduct
+    createProduct,
+    editProduct,
+    updateProduct
 }
 
 function newProfile(req, res) {
@@ -54,3 +55,24 @@ function createProduct(req, res){
     })
 
 }
+
+function editProduct(req,res) {
+    console.log('----')
+    Profile.findOne({'product._id': req.params.id}, function(err, profile){
+        const product = profile.product.id(req.params.id)
+        console.log(product)
+        res.render('products/edit', {
+            title:'Edit Product', profile: profile, product: product
+        })
+    })
+}
+
+function updateProduct(req,res){
+    console.log('////', req.params.productid)
+    console.log('-----', req.body)
+    Profile.updateOne({'product._id': req.params.productid}, {$set:req.body}, {
+        new: true
+    })
+    res.redirect('/profiles')
+}
+

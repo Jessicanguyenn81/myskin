@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Create Product</title>
+</head>
+<body>
+    <h2>Edit Product: </h2>
+    <form action="/profiles/<%= profile._id %>/<%= product._id %>/products/edit?_method=PUT" method="POST">
+        <label>Product Type:
+            <select name="productType">
+                <option value="Cleanser">Cleanser</option>
+                <option value="Toner">Toner</option>
+                <option value="Moisturizer">Moisturizer</option>
+                <option value="Serum">Serum</option>
+                <option value="Sunscreen">Sunscreen</option>
+            </select>
+        </label><br>
+        <label>Brand:
+            <input type="text" name="brand" value="<%=product.brand %>">
+        </label><br>
+        <label>Usage: 
+            <select name="usage">
+                <option value="day">day</option>
+                <option value="night">night</option>
+                <option value="day and night">day and night</option>
+            </select>
+        </label><br>
+        <label> Completed </label>
+        <input type="checkbox" name="completed" checked>
+        <input type="submit" value="Edit Product">
+    </form>
+</body>
+</html>

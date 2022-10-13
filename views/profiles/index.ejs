@@ -35,6 +35,9 @@
           <p><%=product.brand %></p>
           <p><%=product.usage %></p>
           <p><%=product.completed %></p>
+          <a href="/profiles/<%= product._id %>/products/edit">
+            <button type="submit">Update Product</button>
+          </a>
           <form id="add-review-form" method="POST" action="/products/<%= product._id %>/reviews">
             <label>Review:</label>
             <textarea name="content"></textarea>
