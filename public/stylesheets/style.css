@@ -1,3 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -17,3 +25,25 @@ a {
 .login img {
   height: 30px;
 }
+
+.nav-bar {
+  display: flex;
+  margin: auto;
+  align-content: flex-end;
+}e
+
+header {
+  background: grey;
+}
+
+.loginbar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid;
+  margin-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+}
+
