@@ -30,10 +30,6 @@ a {
   display: flex;
   margin: auto;
   align-content: flex-end;
-}e
-
-header {
-  background: grey;
 }
 
 .loginbar {
