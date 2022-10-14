@@ -16,7 +16,8 @@ Once you created your routine, you go to my routine. And this is where you can a
 <img width="1460" alt="Screen Shot 2022-10-13 at 11 58 49 PM" src="https://user-images.githubusercontent.com/111536026/195783690-a740380e-b897-42cd-ac70-4666bd173262.png">
 
 
-# Pro<img width="1457" alt="Screen Shot 2022-10-14 at 12 24 36 AM" src="https://user-images.githubusercontent.com/111536026/195787348-e333d14e-b8bb-40a0-a093-f1ecef99e3a7.png">
+# Profile
+<img width="1457" alt="Screen Shot 2022-10-14 at 12 24 36 AM" src="https://user-images.githubusercontent.com/111536026/195787348-e333d14e-b8bb-40a0-a093-f1ecef99e3a7.png">
 
 
 
