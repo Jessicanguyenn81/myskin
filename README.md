@@ -12,11 +12,13 @@ Everyone's routine is different, this is a great place to build yours!
 A user needs to login with Google OAuth, then you would create a skin routine.
 Once you created your routine, you go to my routine. And this is where you can add your products and leave your reviews. You can also update your products.
  
-# Start of Game
-<img width="1304" alt="Screen Shot 2022-09-22 at 3 21 03 PM" src="https://user-images.githubusercontent.com/111536026/191861637-ec563cd3-8412-4e31-9ab9-4a5ed9751fad.png">
+# Start Page
+<img width="1460" alt="Screen Shot 2022-10-13 at 11 58 49 PM" src="https://user-images.githubusercontent.com/111536026/195783690-a740380e-b897-42cd-ac70-4666bd173262.png">
 
-# End of Game Winner
-<img width="965" alt="Screen Shot 2022-09-22 at 3 26 01 PM" src="https://user-images.githubusercontent.com/111536026/191862133-ed843b80-d99c-4c06-9d9d-1b7c0cba3551.png">
+
+# Pro<img width="1457" alt="Screen Shot 2022-10-14 at 12 24 36 AM" src="https://user-images.githubusercontent.com/111536026/195787348-e333d14e-b8bb-40a0-a093-f1ecef99e3a7.png">
+file
+
 
 # Technologies Used
 Javascript, HTML, and CSS, MongoDB, Mongoose, Express.js, Node.js, and Passport.js
